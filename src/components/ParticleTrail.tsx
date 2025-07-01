@@ -13,8 +13,8 @@ interface Particle {
 export default function ParticleTrail() {
   // Removed unused mouse position state
   const [particles, setParticles] = useState<Particle[]>([]);
-  const requestRef = useRef<number>();
-  const previousTimeRef = useRef<number>();
+  const requestRef = useRef<number | null>(null);
+  const previousTimeRef = useRef<number | undefined>(undefined);
   const particleIdRef = useRef(0);
 
   useEffect(() => {
